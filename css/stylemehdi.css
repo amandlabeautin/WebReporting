@@ -4,9 +4,9 @@
 }
 
 #newPop {
+  background-color:#4d4d4d;
   display: none;
   position: absolute;
-  background-color: white;
   border: solid 2px slategray;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -14,6 +14,18 @@
   border-radius: 10px;
   color: black;
   padding: 10px;
+}
+
+#popName{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: oblique;
+    text-align: center;
+}
+
+.textpopname{
+   color : #ff0;
+    text-align: left;
 }
 
 /*

@@ -5,7 +5,7 @@
     
 	// D3 Bubble Chart 
 
-	var diameter = 600;
+	var diameter = 400;
 
 	var svg = d3.select('#graph').append('svg')
 					.attr('width', diameter)
@@ -16,6 +16,27 @@
     var newPop = d3.select('#graph').append('div')
                     .attr('id', "newPop")
                     .style("display","none");
+
+    var popName = d3.select('#newPop').append('center')
+                    .attr('class', "textpopname")
+                    .attr('id', "popName");
+
+    var hrPop = d3.select('#newPop').append('hr')
+                    .attr('class', "textpopname")
+                    .attr('id', "hrPop");
+
+    var diametre = d3.select('#newPop').append('div')
+                    .attr('class', "textpopname")
+                    .attr('id', "diametre");
+
+    var population = d3.select('#newPop').append('div')
+                    .attr('class', "textpopname")
+                    .attr('id', "population");
+
+    var gravite = d3.select('#newPop').append('div')
+                    .attr('class', "textpopname")
+                    .attr('id', "gravite");
+
      //---//---//--- 
        
        
@@ -41,9 +62,13 @@
             .attr('class', function(d) { return d.className; })
             .on("mousemove", function(d){
            newPop.style("display","block")
-                 .text(d.name)
                  .style("left", (d3.event.pageX + 16)+ "px")
                  .style("top", (d3.event.pageY + 16) + "px");  
+            popName.text(d.name);
+            diametre.text("Diamètre : "+d.size );
+            population.text("Population : "+d.population );
+            var grav = d.gravite.split(" ");
+            gravite.text("Gravité : "+ grav[0] );
             })
             .on("mouseup", function(d){
             // CLICK FUNCTION ???
@@ -56,10 +81,9 @@
   function processData(data) {
     var obj = data.results;
     var newDataSet = [];
-
+console.log(obj);
  for(var prop in obj) {
-       // console.log(obj[prop]);
-      newDataSet.push({name: obj[prop].name, className: /*obj[prop].name.toLowerCase() + " " + */obj[prop].terrain.toLowerCase()+ " planet", size: obj[prop].diameter});
+      newDataSet.push({name: obj[prop].name, className: obj[prop].terrain.toLowerCase()+ " planet", size: obj[prop].diameter, population : obj[prop].population,gravite : obj[prop].gravity});
     }
     return {children: newDataSet};
   }     
