@@ -20,3 +20,8 @@
 .Coruscant { fill: rgb(127,188,65); }
 .Kamino { fill: rgb(77,146,33); }
 .Geonosis {fill: #FFFFFF;}
+
+div.download-section {
+	background-image: url(../img/Star_of_the_universe.jpg);
+	background-repeat:no-repeat;
+}
