@@ -1,7 +1,29 @@
 (function() {
-   d3.json("donnees/planetsSW.json",function(error,data){
-        if (error) return console.warn(error);
-        var json = data;    
+       
+    var next  = "http://swapi.co/api/planets/";
+    var json  = [];  
+    var boolnext = false;
+   
+    getData(next);    
+        
+function getData(url){
+    d3.json(url, function(error, json) {
+  if (error) return console.warn(error);
+        
+         console.log(json);
+        
+        if(json.next!==null){
+            getData(json.next);
+        }
+        else{ 
+            return false; 
+            boolnext = true;
+        }
+});
+    
+}
+    
+    if(boolnext){
     
 	// D3 Bubble Chart 
 
@@ -10,8 +32,6 @@
 	var svg = d3.select('#graph').append('svg')
 					.attr('width', diameter)
 					.attr('height', diameter);
-      
-       
      //---//---//---  
     var newPop = d3.select('#graph').append('div')
                     .attr('id', "newPop")
@@ -79,13 +99,14 @@
               
 
   function processData(data) {
-    var obj = data.results;
     var newDataSet = [];
-console.log(obj);
- for(var prop in obj) {
-      newDataSet.push({name: obj[prop].name, className: obj[prop].terrain.toLowerCase()+ " planet", size: obj[prop].diameter, population : obj[prop].population,gravite : obj[prop].gravity});
+var donnees = data;
+ for(var prop in json) {
+      newDataSet.push({name: json[prop].name, className: json[prop].terrain.toLowerCase()+ " planet", size: json[prop].diameter, population : json[prop].population,gravite : json[prop].gravity});
     }
     return {children: newDataSet};
   }     
-  });    
+// });
+    
+}
 })();

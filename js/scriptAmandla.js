@@ -1,4 +1,4 @@
-d3.json("donnees/planetsSW.json",function(error,data){
+/*d3.json("donnees/planetsSW.json",function(error,data){
         if (error) return console.warn(error);
         var json = data.results;
 
@@ -41,4 +41,4 @@ var newPopA = d3.select('#graphTerrain').append('div')
     });
   });
 });
-    });
+    });*/
