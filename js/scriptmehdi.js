@@ -1,11 +1,15 @@
 	// D3 Bubble Chart 
 function bubblechart(){
-	var diameter = 450;
+	var diameter = 450,
+    format = d3.format(",d"),
+    color = d3.scale.category20c();
 
+    //Creation de la div de graph
 	var svg = d3.select('#graph').append('svg')
 					.attr('width', diameter)
 					.attr('height', diameter);
-     //---//---//---  
+    
+    //Création de la popup d'affichage (hover une planète)
     var newPop = d3.select('#graph').append('div')
                     .attr('id', "newPop")
                     .style("display","none");
@@ -30,30 +34,19 @@ function bubblechart(){
                     .attr('class', "textpopname")
                     .attr('id', "gravite");
 
-     //---//---//--- 
-       
-       
+    
 	var bubble = d3.layout.pack()
 				.size([diameter, diameter])
 				.value(function(d) {return d.size;})
-         // .sort(function(a, b) {
-				// 	return -(a.value - b.value)
-				// }) 
 				.padding(3);      
-       
-  // generate data with calculated layout values
-  var nodes = bubble.nodes(processData(donnees))
-						.filter(function(d) { return !d.children; }); // filter out the outer bubble
  
-  var vis = svg.selectAll('circle')
-					.data(nodes);
-
-       
-  vis.enter().append('circle')
-			.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; })
-			.attr('r', function(d) { return d.r; })
-            .attr('class', function(d) { return d.className; })
-            .on("mousemove", function(d){
+ var node = svg.selectAll(".node")
+      .data(bubble.nodes(processData(donnees))
+      .filter(function(d) { return !d.children; }))
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+                    .on("mousemove", function(d){
            newPop.style("display","block")
                  .style("left", (d3.event.pageX + 16)+ "px")
                  .style("top", (d3.event.pageY + 16) + "px");  
@@ -63,12 +56,23 @@ function bubblechart(){
             var grav = d.gravite.split(" ");
             gravite.text("Gravité : "+ grav[0] );
             })
-            .on("mouseup", function(d){
-            // CLICK FUNCTION ???
-  })
             .on("mouseout", function(d){
             newPop.style("display","none");
   });
+
+  node.append("title")
+      .text(function(d) { return d.className});
+
+
+   //Création d'un cercle (avec attributs HTML et evenement mouseup et mousemove)     
+  node.append('circle')
+			.attr('r', function(d) { return d.r; })
+            .attr('class', function(d) { return d.className; });
+    
+    node.append("text")
+      .attr("dy", ".3em")
+      .style("text-anchor", "middle")
+      .text(function(d) { return d.className.substring(0, d.r / 3); });
 
   function processData(data) {
     var newDataSet = [];

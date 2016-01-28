@@ -23,6 +23,5 @@ function getData(url){
 }
 
 function traitementjson(tab){
-    for (var i in tab){ donnees.push(tab[i]); console.log(tab[i].terrain);}
-    
+    for (var i in tab)/*{*/ donnees.push(tab[i]); /*console.log(tab[i].diameter);}*/
 }
