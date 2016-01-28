@@ -16,6 +16,7 @@ function getData(url){
         else{ 
             boolnext = true;
             bubblechart();
+            spacetime();
             return donnees; 
         }
 });
