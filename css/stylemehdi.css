@@ -36,19 +36,19 @@ Fond des planètes par relief:
 .cityscape{fill: #DF4949; background: #DF4949;}
 
 
-.mountains,.mountain ranges, .ranges ,.ice caves {fill: #E27A3F; background: #E27A3F;}
+.mountains,.mountain ranges, .ranges ,.ice caves,.ice canyons,.glaciers {fill: #E27A3F; background: #E27A3F;}
 
 
-.jungles,.rainforests, .forests { fill: #EFC94C; background: #EFC94C;}
+.jungles,.rainforests, .forests,.savannas,.caves { fill: #EFC94C; background: #EFC94C;}
 
 
 .lakes { fill: #9B59B6; background:  #9B59B6;}
 
 
-.gas {fill: #3498db; background: #3498db;}
+.gas,.volcanoes,.toxic, .lava rivers {fill: #3498db; background: #3498db;}
 
 
-.barren, .desert, .rock, desert {fill: #F495A3; background: #F495A3;}
+.barren, .desert, .rock, .desert, .deserts {fill: #F495A3; background: #F495A3;}
 
 /* Unclassified */
-.grasslands,.tundra,.lakes,.grassy hills,.swamps,.ocean { fill: #45B29D; background: #45B29D;}
+.vines,.grasslands,.tundra,.lakes,.grassy hills,.swamps,.ocean,.unknown, .rocky,.reefs,.islands,.bogs,.seas,.ash { fill: #45B29D; background: #45B29D;}

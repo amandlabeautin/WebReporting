@@ -1,33 +1,6 @@
-(function() {
-       
-    var next  = "http://swapi.co/api/planets/";
-    var json  = [];  
-    var boolnext = false;
-   
-    getData(next);    
-        
-function getData(url){
-    d3.json(url, function(error, json) {
-  if (error) return console.warn(error);
-        
-         console.log(json);
-        
-        if(json.next!==null){
-            getData(json.next);
-        }
-        else{ 
-            return false; 
-            boolnext = true;
-        }
-});
-    
-}
-    
-    if(boolnext){
-    
 	// D3 Bubble Chart 
-
-	var diameter = 400;
+function bubblechart(){
+	var diameter = 450;
 
 	var svg = d3.select('#graph').append('svg')
 					.attr('width', diameter)
@@ -69,7 +42,7 @@ function getData(url){
 				.padding(3);      
        
   // generate data with calculated layout values
-  var nodes = bubble.nodes(processData(json))
+  var nodes = bubble.nodes(processData(donnees))
 						.filter(function(d) { return !d.children; }); // filter out the outer bubble
  
   var vis = svg.selectAll('circle')
@@ -96,17 +69,12 @@ function getData(url){
             .on("mouseout", function(d){
             newPop.style("display","none");
   });
-              
 
   function processData(data) {
     var newDataSet = [];
-var donnees = data;
- for(var prop in json) {
-      newDataSet.push({name: json[prop].name, className: json[prop].terrain.toLowerCase()+ " planet", size: json[prop].diameter, population : json[prop].population,gravite : json[prop].gravity});
+ for(var prop in data) {
+      newDataSet.push({name: data[prop].name, className: data[prop].terrain.toLowerCase()+ " planet", size: data[prop].diameter, population : data[prop].population,gravite : data[prop].gravity});
     }
     return {children: newDataSet};
   }     
-// });
-    
 }
-})();
