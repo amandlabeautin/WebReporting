@@ -1,12 +1,15 @@
-    var next  = "http://swapi.co/api/planets/";
-    var donnees  = [];  
+    var planetnext  = "http://swapi.co/api/planets/";
+    //var peoplenext  = "http://swapi.co/api/people/";
     var boolnext = false;    
-        getData(next);
+    var donnees = [];
+       getData(planetnext);
+     //  getData(peoplenext);
         
 function getData(url){
+    var test = "toto";
     d3.json(url, function(error, json) {
   if (error) return console.warn(error);
-        
+        console.log(test);
          traitementjson(json.results);
          
         
@@ -24,4 +27,5 @@ function getData(url){
 
 function traitementjson(tab){
     for (var i in tab)/*{*/ donnees.push(tab[i]); /*console.log(tab[i].diameter);}*/
+    return donnees;
 }
