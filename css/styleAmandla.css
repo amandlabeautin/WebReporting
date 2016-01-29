@@ -1,3 +1,4 @@
+
 .orbit {
     stroke : #000000;
     fill : none;
@@ -10,18 +11,33 @@
     stroke : yellow;
     fill : yellow;
 }
-.Alderaan { fill: rgb(197,27,125); }
-.Yavin IV { fill: rgb(222,119,174); }
-.Hoth { fill: rgb(241,182,218); }
-.Dagobah { fill: rgb(253,224,239); }
-.Bespin { fill: rgb(247,247,247); }
-.Endor { fill: rgb(230,245,208); }
-.Naboo { fill: rgb(184,225,134); }
-.Coruscant { fill: rgb(127,188,65); }
-.Kamino { fill: rgb(77,146,33); }
-.Geonosis {fill: #FFFFFF;}
 
 div.download-section {
 	background-image: url(../img/Star_of_the_universe.jpg);
 	background-repeat:no-repeat;
+}
+
+#newPopSpace {
+  background-color:#191970;
+  display: none;
+  position: absolute;
+  border: solid 2px silver;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+}
+
+#popNameSpace{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: oblique;
+    text-align: center;
+}
+
+.textpopnameSpace{
+   color : gold;
+    text-align: left;
 }
