@@ -41,7 +41,7 @@ function bubblechart(){
     .padding(3);      
 
     var node = svg.selectAll(".node")
-    .data(bubble.nodes(processData(donnees))
+    .data(bubble.nodes(processData(results.planets))
           .filter(function(d) { return !d.children; }))
     .enter().append("g")
     .attr("class", "node")
