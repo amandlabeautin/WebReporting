@@ -66,7 +66,7 @@ var svg = d3.select("#graphResidents").append("svg")
           return function(t) { zoomTo(i(t)); };
         });
 
-    transition.selectAll("text")
+   transition.select("#graphResidents").selectAll("text")
       .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
         .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
         .each("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
