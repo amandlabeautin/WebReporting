@@ -1,0 +1,49 @@
+#graphResidents .node {
+  cursor: pointer;
+}
+
+#graphResidents .node:hover {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+#graphResidents .node--leaf {
+  fill: white;
+}
+
+#graphResidents .label {
+  font: 17px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+}
+
+#graphResidents .label,
+#graphResidents .node--root,
+#graphResidents .node--leaf {
+  pointer-events: none;
+}
+
+#newPopPacking {
+  background-color:#494785;
+  display: none;
+  position: absolute;
+  border: solid 2px silver;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+}
+
+#popNamePacking{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: oblique;
+    text-align: center;
+}
+
+.textpopNamePacking{
+   color : #838547;
+    text-align: left;
+}

@@ -1,6 +1,7 @@
 function spacetime() {
   var wSpace = 800, hSpace = 700;
   var t0 = Date.now();
+  var colorRamdom;
 
 
   var svgSpace = d3.select("#graphTerrain").insert("svg")
@@ -39,16 +40,20 @@ function spacetime() {
   var container = svgSpace.append("g")
     .attr("transform", "translate(" + wSpace/2 + "," + hSpace/2 + ")")
 
-  container.selectAll("g.planet").data(donnees).enter().append("g")
+  container.selectAll("g.planet").data(results.planets).enter().append("g")
     .attr("class", "planetOrbit").each(function(d, i) {
       if(d.rotation_period != "unknown" && d.orbital_period != "unknown"){
         d3.select(this).append("circle").attr("class", "orbit")
           .attr("r", d.orbital_period/2);
         d3.select(this).append("circle").attr("r", d.rotation_period/2).attr("cx",d.orbital_period/2)
-          .attr("cy", 0).attr("class", function(d) { return d.name})
+          .attr("cy", 0).attr("class", function(d) {return d.name})
           .style("fill", function(d) { 
             if (d.diameter == "unknown" || d.diameter == 0) return "#000000";
-            else return getRandomColor();
+            else colorRamdom = getRandomColor(); return colorRamdom;
+          })
+          .style("border-color", function(d){
+            if (d.diameter == "unknown" || d.diameter == 0) return "#000000";
+            else return colorRamdom;
           })
           .on("mousemove", function(d){
             newPopSpace.style("display","block")

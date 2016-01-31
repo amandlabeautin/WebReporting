@@ -37,7 +37,8 @@ function getData(url,debut,groupnext){
     }else{
     results.planets = donnees[0];
     results.people = donnees[1];
-    console.log(results)
     bubblechart();
+    spacetime();
+    circlepacking();
     }
 }
