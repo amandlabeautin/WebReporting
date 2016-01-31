@@ -49,5 +49,5 @@ ATTENTION :  Les planètes de couleur noir, sont des planètes où nous ne dispo
 ##### Circle Packing
 Ce graphique reprèsente, pour chaque planète, les personnages associés. 
 
-##### KEVIN 
-todo
+##### Axis Graph
+Ce grahique représente la taille de population de chaque planète en fonction de la taille de la planète.
