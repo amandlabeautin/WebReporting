@@ -1,0 +1,54 @@
+.node:hover {
+  opacity : 0.5;
+  background-color: grey;
+}
+
+#newPop {
+  background-color:#4d4d4d;
+  display: none;
+  position: absolute;
+  border: solid 2px slategray;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+}
+
+#popName{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: oblique;
+    text-align: center;
+}
+
+.textpopname{
+   color : #ff0;
+    text-align: left;
+}
+
+/*
+Fond des planètes par relief:
+*/
+
+
+.cityscape{fill: #DF4949; }
+
+
+.mountains,.mountain ranges, .ranges ,.ice caves,.ice,.canyons,.glaciers {fill: #E27A3F; }
+
+
+.jungles,.rainforests, .forests,.savannas,.caves { fill: #EFC94C;}
+
+
+.lakes,.rivers { fill: #9B59B6; }
+
+
+.gas,.volcanoes,.toxic, .lava rivers {fill: #3498db;}
+
+
+.barren, .desert, .rock, .desert, .deserts {fill: #F495A3; }
+
+/* Unclassified */
+.vines,.grasslands,.tundra,.grassy hills,.swamps,.ocean,.unknown, .rocky,.reefs,.islands,.bogs,.seas,.ash, .mesas,.sinkholes,.scrublands  { fill: #45B29D;}

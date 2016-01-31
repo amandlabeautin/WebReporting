@@ -1,0 +1,43 @@
+
+.orbit {
+    stroke : #000000;
+    fill : none;
+}
+.planetOrbit {
+    stroke : #000000;
+    fill : #FFFFFF;
+}
+.sun {
+    stroke : yellow;
+    fill : yellow;
+}
+
+div.download-section {
+	background-image: url(../img/Star_of_the_universe.jpg);
+	background-repeat:no-repeat;
+}
+
+#newPopSpace {
+  background-color:#494785;
+  display: none;
+  position: absolute;
+  border: solid 2px silver;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+}
+
+#popNameSpace{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: oblique;
+    text-align: center;
+}
+
+.textpopnameSpace{
+   color : gold;
+    text-align: left;
+}
