@@ -4,22 +4,25 @@ function parseData(d) {
   var stringTypes = ["name", "climate", "terrain", "residents", "films", "url"]
   return _.map(d, function(d) {
     var o = {};
-    _.each(keys, function(k) {
-      if(stringTypes.indexOf(k) != -1)
-        o[k] = d[k];
-      else {
-        if(typeof d[k] == "string")
-        {
-          // Population = 0; 
-          if(d[k] == "unknown")
-            o[k] = 0;
-          else
-            o[k] = d[k];
-        }
-        else
-          o[k] = parseFloat(d[k]);
-      }
-    });
+    if (d['diameter'] != "unknown" && d['population'] != "unknown")
+    {
+        _.each(keys, function(k) {
+            if(stringTypes.indexOf(k) != -1)
+              o[k] = d[k];
+            else {
+              if(typeof d[k] == "string")
+              {
+                // Population = 0; 
+                if(d[k] == "unknown")
+                  o[k] = 0;
+                else
+                  o[k] = d[k];
+              }
+              else
+                o[k] = parseFloat(d[k]);
+            }
+        });
+    }
     return o;
   });
 }
@@ -46,7 +49,6 @@ function getBounds(d, paddingFactor) {
     b[k].max > 0 ? b[k].max *= paddingFactor : b[k].max /= paddingFactor;
     b[k].min > 0 ? b[k].min /= paddingFactor : b[k].min *= paddingFactor;
   });
-  console.log(b);
   return b;
 }
 
@@ -59,8 +61,12 @@ function getCorrelation(xArray, yArray) {
   var xNaN = _.reduce(xArray, filterNaN , []);
   var yNaN = _.reduce(yArray, filterNaN , []);
   var include = _.intersection(xNaN, yNaN);
-  var fX = _.map(include, function(d) {return xArray[d];});
-  var fY = _.map(include, function(d) {return yArray[d];});
+  var fX = _.map(include, function(d) {
+    return parseFloat(xArray[d]);
+  });
+  var fY = _.map(include, function(d) {
+    return parseFloat(yArray[d]);
+  });
 
   var sumX = _.reduce(fX, sum, 0);
   var sumY = _.reduce(fY, sum, 0);
@@ -77,14 +83,11 @@ function getCorrelation(xArray, yArray) {
   var m = ntor / dtorX; // y = mx + b
   var b = ( sumY - m * sumX ) / n;
 
-  // console.log(r, m, b);
   return {r: r, m: m, b: b};
 }
 
-d3.json('donnees/planetsSW.json', function(error, data) {
-
-  if (error) return console.warn(error);
-  var json = data.results;
+function axisGraph() {
+  /*var json = donnees.results;*/
 
   var xAxis = 'diameter', yAxis = 'population';
   /*var xAxisOptions = ["GDP", "Equality", "Food consumption", "Alcohol consumption", "Energy consumption", "Family", "Working hours", "Work income", "Health spending", "Military spending"]*/
@@ -94,8 +97,9 @@ d3.json('donnees/planetsSW.json', function(error, data) {
     "population" : "Population de la planète"
   };
 
-  var keys = _.keys(json[0]);
-  var data = parseData(json);
+  var keys = _.keys(donnees[0]);
+  var data = parseData(donnees);
+  console.log(data);
   var bounds = getBounds(data, 1);
 
   // SVG AND D3 STUFF
@@ -109,37 +113,6 @@ d3.json('donnees/planetsSW.json', function(error, data) {
     .classed('chart', true)
     .attr('transform', 'translate(80, -60)');
 
-  // Build menus
-  /*d3.select('#x-axis-menu')
-    .selectAll('li')
-    .data(xAxisOptions)
-    .enter()
-    .append('li')
-    .text(function(d) {return d;})
-    .classed('selected', function(d) {
-      return d === xAxis;
-    })
-    .on('click', function(d) {
-      xAxis = d;
-      updateChart();
-      updateMenus();
-    });*/
-
-  // d3.select('#y-axis-menu')
-  //   .selectAll('li')
-  //   .data(yAxisOptions)
-  //   .enter()
-  //   .append('li')
-  //   .text(function(d) {return d;})
-  //   .classed('selected', function(d) {
-  //     return d === yAxis;
-  //   })
-  //   .on('click', function(d) {
-  //     yAxis = d;
-  //     updateChart();
-  //     updateMenus();
-  //   });
-
   // Country name
   d3.select('svg g.chart')
     .append('text')
@@ -150,12 +123,6 @@ d3.json('donnees/planetsSW.json', function(error, data) {
   d3.select('svg g.chart')
     .append('line')
     .attr('id', 'bestfit');
-
-  // Axis labels
-  /*d3.select('svg g.chart')
-    .append('text')
-    .attr({'id': 'xLabel', 'x': 400, 'y': 670, 'text-anchor': 'middle'})
-    .text(descriptions[xAxis]);*/
 
   d3.select('svg g.chart')
     .append('text')
@@ -244,10 +211,6 @@ d3.json('donnees/planetsSW.json', function(error, data) {
       .transition()
       .call(makeYAxis);
 
-    // Update axis labels
-    /*d3.select('#xLabel')
-      .text(descriptions[xAxis]);*/
-
     // Update correlation
     var xArray = _.map(data, function(d) {return d[xAxis];});
     var yArray = _.map(data, function(d) {return d[yAxis];});
@@ -266,15 +229,12 @@ d3.json('donnees/planetsSW.json', function(error, data) {
 
   function updateScales() {
     xScale = d3.scale.linear()
-                    .domain([bounds[xAxis].min, bounds[xAxis].max])
-                    .range([20, 1200]);
+                    .domain([0, 30000])
+                    .range([20, 1000]);
 
     yScale = d3.scale.linear()
-                    .domain([bounds[yAxis].min, bounds[yAxis].max])
+                    .domain([0, 40000000000])
                     .range([900, 100]);
-
-    /*console.log(xScale);
-    console.log(yScale); */   
   }
 
   function makeXAxis(s) {
@@ -301,5 +261,4 @@ d3.json('donnees/planetsSW.json', function(error, data) {
         return d === yAxis;
     });
   }
-
-})
+}

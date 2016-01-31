@@ -40,5 +40,6 @@ function getData(url,debut,groupnext){
     bubblechart();
     spacetime();
     circlepacking();
+    axisGraph();
     }
 }
