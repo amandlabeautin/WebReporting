@@ -1,5 +1,5 @@
 
-<p align="center"><img align="center" src="http://img15.hostingpics.net/pics/357724starwarsdynamicbannerlogo.jpg" width="100%" height="196" /></p>
+<p align="center"><a href="http://amandlabeautin.github.io/WebReporting/"><img align="center" src="http://img15.hostingpics.net/pics/357724starwarsdynamicbannerlogo.jpg" width="100%" height="196" /></a></p>
 
 <p align="center"><h1> Les Planètes de l'Univers Star Wars</h1></p>
 
@@ -13,6 +13,7 @@ Etudiants de Master MIAGE à l'université Paris Descartes
 
 ### Que fait cet outil ?
 Cette interface présente les planètes de l'univers Star Wars. Il est possible d'en savoir plus sur leur taille, leur relief, leurs habitants ainsi que leur position dans l'univers.
+Cet outil est disponible à cette adresse : http://amandlabeautin.github.io/WebReporting/
 
 ### Ressources utilisées
 ##### Templating et Style   
@@ -49,5 +50,5 @@ ATTENTION :  Les planètes de couleur noir, sont des planètes où nous ne dispo
 ##### Circle Packing
 Ce graphique reprèsente, pour chaque planète, les personnages associés. 
 
-##### KEVIN 
-todo
+##### Axis Graph
+Ce grahique représente la taille de population de chaque planète en fonction de la taille de la planète.

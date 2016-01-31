@@ -11,12 +11,7 @@
 
         <title> Projet EC </title>
 
-
-        <!-- Script Chargement  -->
-        <!-- <script src="js/chargementprogress.js"></script> -->
-        <script>
-            $(document).ready(function(){$("body").hide().fadeOut(10000);});
-        </script>
+        <!-- CSS  -->
 
         <!-- bubblechart CSS -->
         <link href="css/bubblechart.css" rel="stylesheet">
@@ -44,7 +39,6 @@
     </head>
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
         <!-- Navigation -->
         <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
             <div class="container">
@@ -74,7 +68,7 @@
                             <a class="page-scroll" href="#circlePacking">Circle Packing</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#contact">Kevin</a>
+                            <a class="page-scroll" href="#axisGraph">Axis Graph</a>
                         </li>
                     </ul>
                 </div>
@@ -125,57 +119,47 @@
     </div>
 </section>
 <section id="circlePacking" class="container content-section text-center">
-        <h2>Les planètes et leurs résidents</h2>
-        <div id="graphResidents"></div>
-    </section>
+    <h2>Les planètes et leurs résidents</h2>
+    <div id="graphResidents"></div>
+</section>
 
 <!-- Kevin -->
-<section id="contact" class="container content-section text-center">
+<section id="axisGraph" class="container content-section text-center">
+    <h2>Graphique représantant la taille de population de la planète en fonction de la taille de celle-ci</h2>
     <div id="wrapper">
         <div id="chart">
         </div>
-        <div id="about">
-        </div>
-
-        <div id="menu">
-        </div>
+    </div>
 </section>
 
-<!-- Footer -->
-<footer>
-    <div class="container text-center">
-        <p>Copyright &copy; MIAGE FA 2015-2016</p>
-    </div>
-</footer>
+</body>
+
+<!-- Librairie Template  -->     
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+<!-- Script Chargement  -->
+<script src="js/chargementProgress.js"></script>
+<!-- Bootstrap Core JavaScript -->        
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugin jQuery easing -->
+<script src="js/jquery.easing.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="js/grayscale.js"></script>
 
 <!-- Librairie Reporting  -->    
 
 <!-- D3 -->
 <script src="js/d3.js"></script>
 
-<!-- Librairie Template  -->     
+<!-- Underscore -->
+<script src="js/underscore-min.js"></script>
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="js/jquery.easing.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="js/grayscale.js"></script>
-
-<!-- Script  -->
+<!-- Script Reporting  -->
 <script src="js/bubblechart.js"></script>
 <script src="js/spaceTime.js"></script>
 <script src="js/circlePacking.js"></script>
 <script src="js/scriptcall.js"></script>
 <script src="js/axisGraph.js"></script>
-<script src="js/underscore-min.js"></script>
-
-</body>
 
 </html>

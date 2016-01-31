@@ -75,6 +75,7 @@ function bubblechart(){
         .style("text-anchor", "middle")
         .style("font-size","100%")
         .style("color","white")
+        .style("fill","black")
         .text(function(d) { 
         
         return d.name.substring(0, d.r / 3); });

@@ -9,13 +9,14 @@ getData(urls,true,true);
 
 function getData(url,debut,groupnext){ 
     if(groupnext === true){ 
+        ajoutcharg(10);
         if (debut !== false){ 
             var url = urls[u];
         }
         else{ 
             data = [];
             u = u + 1; 
-           if(typeof urls[u] !== 'undefined') var url = urls[u];
+            if(typeof urls[u] !== 'undefined') var url = urls[u];
             else end = true;
         }
     }
@@ -28,6 +29,7 @@ function getData(url,debut,groupnext){
 
             if(json.next!==null){
                 getData(json.next,false,false);
+                ajoutcharg(5);
             }
             else{ 
                 donnees.push(data); 
@@ -35,11 +37,13 @@ function getData(url,debut,groupnext){
             }
         });
     }else{
-    results.planets = donnees[0];
-    results.people = donnees[1];
-    bubblechart();
-    spacetime();
-    circlepacking();
-    axisGraph();
+        results.planets = donnees[0];
+        results.people = donnees[1];
+        bubblechart();
+        spacetime();
+        circlepacking();
+        axisGraph();
+        fadeoutintro();
     }
 }
+
