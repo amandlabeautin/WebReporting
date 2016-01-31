@@ -1,7 +1,7 @@
 // HELPERS
 function parseData(d) {
   var keys = _.keys(d[0]);
-  var stringTypes = ["name", "climate", "terrain", "residents", "films", "url"]
+  var stringTypes = ["name", "climate", "terrain", "residents", "films", "url"];
   return _.map(d, function(d) {
     var o = {};
     if (d['diameter'] != "unknown" && d['population'] != "unknown")
@@ -98,8 +98,7 @@ function axisGraph() {
   };
 
   var keys = _.keys(donnees[0]);
-  var data = parseData(donnees);
-  console.log(data);
+  var data = parseData(results.planets);
   var bounds = getBounds(data, 1);
 
   // SVG AND D3 STUFF
