@@ -42,7 +42,12 @@ Dans le cadre du projet, et pour présenter la thématique Star Wars, nous avons
 
 Une représentation graphique des planètes, où les cercles sont proportionnel à leur taille "réelles". Elles sont nommées et colorées en fonction de leur relief (un regroupement des reliefs pour chaque couleur a été fait pour faciliter l'affichage).
 
-##### AMANDLA 
-todo
+##### Space Time
+Une reprséentation du système solaire de Star Wars, où chaque planète disposent de son cycle de rotation autour du soleil et de son orbite. Les planètes sont affichés proportionnellement par leur diamètre.
+ATTENTION :  Les planètes de couleur noir, sont des planètes où nous ne disposont pas de données suffissantes. Ces planètes ont leur cycle de rotation et/ou leur orbite et/ou leur diamètre, créent aléatoirement.
+
+##### Circle Packing
+Ce graphique reprèsente, pour chaque planète, les personnages associés. 
+
 ##### KEVIN 
 todo
