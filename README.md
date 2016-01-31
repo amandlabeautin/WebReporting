@@ -1,28 +1,48 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Grayscale](http://startbootstrap.com/template-overviews/grayscale/)
 
-[Grayscale](http://startbootstrap.com/template-overviews/grayscale/) is a multipurpose, one page HTML theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This template features various content sections and a Google Maps section with a custom map marker.
+<p align="center"><img align="center" src="http://img15.hostingpics.net/pics/357724starwarsdynamicbannerlogo.jpg" width="100%" height="196" /></p>
 
-## Getting Started
+<p align="center"><h1> Les Planètes de l'Univers Star Wars</h1></p>
 
-To use this template, choose one of the following options to get started:
-* Download the latest release on Start Bootstrap
-* Fork this repository on GitHub
+### Equipe de Projet
 
-## Bugs and Issues
+- Amandla BEAUTIN
+- Mehdi BATISTA
+- Kevin VU
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/IronSummitMedia/startbootstrap-grayscale/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/grayscale/).
+Etudiants de Master MIAGE à l'université Paris Descartes
 
-## Creator
+### Que fait cet outil ?
+Cette interface présente les planètes de l'univers Star Wars. Il est possible d'en savoir plus sur leur taille, leur relief, leurs habitants ainsi que leur position dans l'univers.
 
-Start Bootstrap was created by and is maintained by **David Miller**, Managing Parter at [Iron Summit Media Strategies](http://www.ironsummitmedia.com/).
+### Ressources utilisées
+##### Templating et Style   
+                        
+> Twitter Bootstrap est utilisé pour le templating, ainsi que pour les effets de pages
+> hors contenu. <img src="http://twoggle.com/blog/wp-content/uploads/2015/09/twitter-bootstrap.png" width="255px" height="151px" />
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+> Le moteur Twitter Bootstrap utilise également Jquery ainsi que Jquery Easing, afin de permettre les animations liées à la page (hors contenu). Les requêtes ne sont donc pas effectuées avec Jquery. <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/JQuery_logo.svg/1280px-JQuery_logo.svg.png" width="300" height="73" />
 
-## Copyright and License
+##### Modélisation du Contenu 
 
-Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the [Apache 2.0](https://github.com/IronSummitMedia/startbootstrap-grayscale/blob/gh-pages/LICENSE) license.
+> La librairie d3.js est au coeur du projet car tout le contenu est modélisé à l'aide de cette librairie.  
+<img src="http://2.bp.blogspot.com/-XppRAAsXnX0/UwBNUAWk5yI/AAAAAAAALU0/RqjjDdqgMzU/s1600/d3-js.png" width="450" height="197" />
 
-http://kaisersly.github.io/scottmurray-d3-fr/14-faire-un-nuage-de-points.html
+
+### Source de données  
+Dans le cadre du projet, et pour présenter la thématique Star Wars, nous avons eu recours à l'API suivante :
+
+* http://swapi.co/ 
+
+<img src="http://m.c.lnkd.licdn.com/mpr/mpr/AAEAAQAAAAAAAAQ4AAAAJDdkZWYzN2ZlLWNhNzUtNDBhYi1hNTMzLTAyNTkwNmJmNzdjZg.jpg" width="450" height="197" />
+
+### Représentations   
+
+##### Bubble Chart    
+
+Une représentation graphique des planètes, où les cercles sont proportionnel à leur taille "réelles". Elles sont nommées et colorées en fonction de leur relief (un regroupement des reliefs pour chaque couleur a été fait pour faciliter l'affichage).
+
+##### AMANDLA 
+todo
+##### KEVIN 
+todo
