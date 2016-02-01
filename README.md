@@ -28,6 +28,8 @@ Cet outil est disponible à cette adresse : http://amandlabeautin.github.io/WebR
 
 > La librairie d3.js est au coeur du projet car tout le contenu est modélisé à l'aide de cette librairie.  
 <img src="http://2.bp.blogspot.com/-XppRAAsXnX0/UwBNUAWk5yI/AAAAAAAALU0/RqjjDdqgMzU/s1600/d3-js.png" width="450" height="197" />
+> La librairie Underscore.js est aussi utilisée dans notre projet.
+<img src="http://underscorejs.org/docs/images/underscore.png" width="450" height="197" />
 
 
 ### Source de données  
